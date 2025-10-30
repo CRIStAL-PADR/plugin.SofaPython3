@@ -233,6 +233,22 @@ void copyScalar(BaseData* a, const AbstractTypeInfo& nfo, pybind11::array_t<T, p
     a->endEditVoidPtr();
 }
 
+template<typename T>
+void copyInteger(BaseData* a, const AbstractTypeInfo& nfo, pybind11::array_t<T, pybind11::array::c_style> src)
+{
+    void* ptr = a->beginEditVoidPtr();
+
+    auto r = src.unchecked();
+    for (pybind11::ssize_t i = 0; i < r.shape(0); i++)
+    {
+        for (pybind11::ssize_t j = 0; j < r.shape(1); j++)
+        {
+            nfo.setIntegerValue( ptr, i*r.shape(1)+j, r(i,j) );
+        }
+    }
+    a->endEditVoidPtr();
+}
+
 /// Following numpy convention returns the number of element in each dimmensions.
 std::tuple<int, int> SOFAPYTHON3_API getShape(BaseData* self);
 
