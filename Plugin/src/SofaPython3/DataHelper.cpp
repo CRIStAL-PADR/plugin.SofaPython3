@@ -75,7 +75,7 @@ std::string toSofaParsableString(const py::handle& p)
 }
 
 /// RVO optimized function. Don't care about copy on the return code.
-void fillBaseObjectdescription(sofa::core::objectmodel::BaseObjectDescription& desc,
+void fillBaseObjectdescription(sofa::core::objectmodel::BaseComponentDescription& desc,
                                const py::dict& dict)
 {
     for(auto kv : dict)

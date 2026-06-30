@@ -233,6 +233,9 @@ void moduleAddDrawTool(py::module &m)
     dt.def("enableLighting", [](DrawTool* self){ self->enableLighting(); });
     dt.def("disableLighting", [](DrawTool* self){ self->disableLighting(); });
 
+    dt.def("enableDepthTest", [](DrawTool* self){ self->enableDepthTest(); });
+    dt.def("disableDepthTest", [](DrawTool* self){ self->disableDepthTest(); });
+
     // Draw text
     dt.def("drawText", [](DrawTool* self,
                           const std::array<SReal,3>& point,

@@ -214,7 +214,7 @@ std::string SOFAPYTHON3_API toSofaParsableString(const pybind11::handle& p);
 //pybind11::object SOFAPYTHON3_API dataToPython(BaseData* d);
 
 /// RVO optimized function. Don't care about copy on the return code.
-void SOFAPYTHON3_API fillBaseObjectdescription(sofa::core::objectmodel::BaseObjectDescription& desc,
+void SOFAPYTHON3_API fillBaseObjectdescription(sofa::core::objectmodel::BaseComponentDescription& desc,
                                const pybind11::dict& dict);
 
 template<typename T>

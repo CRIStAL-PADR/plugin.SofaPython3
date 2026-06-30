@@ -66,7 +66,7 @@ using sofapython3::PythonEnvironment;
 
 #include <SofaPython3/SpellingSuggestionHelper.h>
 
-using sofa::core::objectmodel::BaseObjectDescription;
+using sofa::core::objectmodel::BaseComponentDescription;
 
 #include <queue>
 #include <sofa/core/objectmodel/Link.h>
