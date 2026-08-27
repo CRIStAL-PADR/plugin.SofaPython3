@@ -18,7 +18,8 @@
 * Contact information: contact@sofa-framework.org                             *
 ******************************************************************************/
 
-#include <sofa/core/objectmodel/Context.h>
+#include <sofa/core/objectmodel/Base.h>
+#include <sofa/core/objectmodel/BaseContext.h>
 #include <SofaPython3/Sofa/Core/Binding_Base.h>
 #include <SofaPython3/Sofa/Core/Binding_BaseContext.h>
 #include <SofaPython3/Sofa/Core/Binding_Context.h>
@@ -29,7 +30,7 @@ namespace py { using namespace pybind11; }
 namespace sofapython3 {
 
 void moduleAddContext(py::module& m) {
-    py::class_<Context, BaseContext, py_shared_ptr<Context>> (m, "Context", "Implementation of BaseContext, storing all shared parameters in Datas");
+    py::class_<BaseContext, Base, py_shared_ptr<BaseContext>> (m, "Context", "Implementation of BaseContext, storing all shared parameters in Datas");
 }
 
 } // namespace sofapython3
